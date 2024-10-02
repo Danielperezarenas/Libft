@@ -6,13 +6,13 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:51:22 by danperez          #+#    #+#             */
-/*   Updated: 2024/09/29 18:16:41 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:38:34 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
