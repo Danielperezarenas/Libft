@@ -14,7 +14,7 @@
 
 // Returns a ptr to the 1st occurrence of the character 'c' in the string 's'
 // or a null pointer if the character is not found.
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ char *ft_strchr(const char *s, int c)
 			return ((char *)s);
 		i++;
 	}
-		return (NULL);
+	return (NULL);
 }
 /* 
 int	main(void)

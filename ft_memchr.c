@@ -6,26 +6,27 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:31:59 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/03 00:07:24 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:39:29 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Find a specific byte in a block of memory
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*ptr;
-	unsigned int		i;
+	size_t				i;
 
 	ptr = s;
 	i = 0;
-	while (i < n && ptr[i] != '\0')
+	while (i < n)
 	{
 		if (ptr[i] == (unsigned char)c)
-			return ((char *)ptr + i);
+			return ((void *)ptr + i);
 		i++;
 	}
-	return (NULL);    
+	return (NULL);
 }
 /* 
 int main() {

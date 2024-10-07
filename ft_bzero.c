@@ -20,13 +20,8 @@ void	ft_bzero(void *s, size_t n)
 int	main(void)
 {
 	char	buffer[10];
-	size_t	i;
 
-	i = 0;
 	ft_bzero(buffer, sizeof(buffer));
-	while (i++ < sizeof(buffer))
-		printf("%d", buffer[i]);
-	printf("\n");
 	size_t size = sizeof(buffer);
 	printf("Tamaño del buffer es: %zu bytes\n", size);
 	return (0);

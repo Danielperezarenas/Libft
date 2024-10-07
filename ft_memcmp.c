@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 16:51:22 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/04 17:21:40 by danperez         ###   ########.fr       */
+/*   Created: 2024/10/04 14:44:30 by danperez          #+#    #+#             */
+/*   Updated: 2024/10/04 15:22:42 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
 
-	i = ft_strlen(s);
-	if ((char)c == '\0')
-		return (NULL);
-	while (i)
+	ptr1 = s1;
+	ptr2 = s2;
+	while (n--)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i--;
+		if (*ptr1 != *ptr2)
+			return (*ptr1 - *ptr2);
+		ptr1++;
+		ptr2++;
 	}
-	return (NULL);
+	return (0);
 }
 /* 
-int	main(void)
+int	main()
 {
 	char str[] = "Hello World!";
-	char *ptr = ft_strrchr(str, 'r');
+	char *ptr = ft_memchr(str, 'o', 10);
 
-	size_t pos = ptr - str;  // calcular la posición del carácter encontrado
-	printf("Found 'r' at position %zu\n", pos);
-	printf("%c\n", ptr);
-	return (0);
+	if (ptr != NULL)
+		printf("'o' found at position %ld\n", ptr - str + 1);
+	else
+		printf("'o' not found\n");
 }
  */

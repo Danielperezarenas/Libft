@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 20:32:52 by danperez          #+#    #+#             */
-/*   Updated: 2024/09/27 15:57:56 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:28:08 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	while (src[j] != '\0')
 		j++;
-	
 	while (j < size - 1 && src[j] != '\0')
 	{
 		dst[i] = src[j];
@@ -34,9 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (i + j);
 }
-
-#include <stdio.h>
-
+/* 
 int	main(void) {
 	char	destination[50] = "Hello, ";
 	char	source[] = "world!";
@@ -47,3 +44,4 @@ int	main(void) {
 
 	return (0);
 }
+ */
