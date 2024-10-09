@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:05:11 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/06 16:19:06 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/07 20:21:44 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int	main() {
 	char str4[] = "";
 	char to_find4[] = "";
 	char *result4 = ft_strnstr(str4, to_find4, 5);
-	printf("Expected: NULL, Got: %s\n", result4 ? result4 : "NULL");
+	printf("Expected: , Got: %s\n", result4 ? result4 : "NULL");
 
 	return (0);
 }
- */
+*/
