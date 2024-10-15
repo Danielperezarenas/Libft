@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:07:35 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/15 15:28:46 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/15 15:41:02 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ int	main(void)
 	printf("Strtrim: '%s'\n", ptr);
 	free(ptr);
 	return (0);
-}	
+}
  */
