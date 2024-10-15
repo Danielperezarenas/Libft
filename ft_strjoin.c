@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 04:19:51 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/13 14:41:39 by danperez         ###   ########.fr       */
+/*   Created: 2024/10/13 14:34:44 by danperez          #+#    #+#             */
+/*   Updated: 2024/10/13 15:05:47 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*subs;
+	char	*str;
 	size_t	i;
 	size_t	j;
 
-	i = start;
+	i = 0;
 	j = 0;
-	subs = malloc(len + 1);
-	if (!subs)
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
 		return (NULL);
-	while (j <= len && s[i] != '\0')
-		{
-			subs[j] = s[i];
-			j++;
-			i++;
-		}
-	subs[j] = '\0';
-	return (subs);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-/* 
+
 int	main(void)
 {
-	const char	s[15] = "Hola Campus!";
-	char	*substr;
+	char const	s1[] = "Hola Campus";
+	char const	s2[] = "42!";
+	char		*str;
 
-	substr = ft_substr(s, 5, 13);
-	printf("String: %s\nSubstring: %s\n", s, substr);
-	free(substr);
+	str = ft_strjoin(s1, s2);
+	printf("String final: %s\n", str);
+	free(str);
 	return (0);
 }
- */

@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:51:22 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/04 17:21:40 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:46:03 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(void)
 
 	size_t pos = ptr - str;  // calcular la posición del carácter encontrado
 	printf("Found 'r' at position %zu\n", pos);
-	printf("%c\n", ptr);
+	printf("%s\n", ptr);
 	return (0);
 }
  */
