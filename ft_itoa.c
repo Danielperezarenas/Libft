@@ -6,11 +6,44 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 00:33:09 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/21 22:00:57 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/22 00:33:40 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	numlen(int n);
+static int	is_num_negative(int n);
+static void	reverse(char *str, int len);
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		i;
+	int		is_negative;
+
+	i = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	is_negative = is_num_negative(n);
+	str = malloc(numlen(n) + 1);
+	if (!str)
+		return (NULL);
+	if (is_negative)
+		n = -n;
+	if (n == 0)
+		str[i++] = '0';
+	while (n != 0)
+	{
+		str[i++] = (n % 10) + '0';
+		n /= 10;
+	}
+	if (is_negative)
+		str[i++] = '-';
+	str[i] = '\0';
+	reverse(str, i);
+	return (str);
+}
 
 static void	reverse(char *str, int len)
 {
@@ -41,7 +74,7 @@ static int	numlen(int n)
 		n = -n;
 	}
 	if (n == 0)
-        count++;
+		len++;
 	while (n != 0)
 	{
 		n /= 10;
@@ -59,43 +92,15 @@ static int	is_num_negative(int n)
 		is_negative = 1;
 	return (is_negative);
 }
-
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		i;
-	int		is_negative;
-
-	i = 0;
-	if (n == -2147483648)
-        return ft_strdup("-2147483648");
-	is_negative = is_num_negative(n);
-	str = malloc(numlen(n) + 1);
-	if (!str)
-		return (NULL);
-	if (is_negative)
-		n = -n;
-	if (n == 0)
-		str[i++] = '0';
-	while (n != 0)
-	{
-		str[i++] = (n % 10) + '0';
-		n /= 10;
-	}
-	if (is_negative)
-		str[i++] = '-';
-	str[i] = '\0';
-	reverse(str, i);
-	return (str);
-}
-
+/* 
 int main(void)
 {
-    char	*buffer;
-    int		number = -2147483648;
+	char	*buffer;
+	int		number = -2147483648;
 
-    buffer = ft_itoa(number);
-    printf("Número convertido: '%s'\n", buffer);
+	buffer = ft_itoa(number);
+	printf("Número convertido: '%s'\n", buffer);
 	free(buffer);
-    return (0);
+	return (0);
 }
+ */
