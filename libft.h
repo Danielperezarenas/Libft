@@ -56,5 +56,6 @@ char	*ft_strdup(const char *s);
 // // Funciones de conversión
 
 int		ft_atoi(const char *str);
+char	*ft_itoa(int n);
 
 #endif
