@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 00:33:09 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/21 02:34:44 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:00:57 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,17 @@ static int	numlen(int n)
 	int len;
 
 	len = 0;
-	if (n <= 0)
+	if (n < 0)
 	{
 		len++;
 		n = -n;
 	}
+	if (n == 0)
+        count++;
 	while (n != 0)
 	{
-		len++;
 		n /= 10;
+		len++;
 	}
 	return (len);
 }
