@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 00:33:09 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/21 02:23:14 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/21 02:34:44 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	numlen(int n)
 	return (len);
 }
 
-static int	is_negative(int n)
+static int	is_num_negative(int n)
 {
 	int	is_negative;
 
@@ -62,14 +62,16 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int		i;
+	int		is_negative;
 
 	i = 0;
 	if (n == -2147483648)
         return ft_strdup("-2147483648");
+	is_negative = is_num_negative(n);
 	str = malloc(numlen(n) + 1);
 	if (!str)
 		return (NULL);
-	if (n < 0)
+	if (is_negative)
 		n = -n;
 	if (n == 0)
 		str[i++] = '0';
@@ -78,13 +80,13 @@ char	*ft_itoa(int n)
 		str[i++] = (n % 10) + '0';
 		n /= 10;
 	}
-	if (is_negative(n))
+	if (is_negative)
 		str[i++] = '-';
 	str[i] = '\0';
 	reverse(str, i);
 	return (str);
 }
-/* 
+
 int main(void)
 {
     char	*buffer;
@@ -95,4 +97,3 @@ int main(void)
 	free(buffer);
     return (0);
 }
- */
