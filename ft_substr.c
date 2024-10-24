@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 04:19:51 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/16 00:26:30 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:24:33 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	subs[j] = '\0';
 	return (subs);
 }
-/* 
+/*
 int	main(void)
 {
 	const char	s[15] = "Hola Campus!";
@@ -43,4 +43,4 @@ int	main(void)
 	free(substr);
 	return (0);
 }
- */
+*/

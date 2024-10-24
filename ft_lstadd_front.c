@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 11:24:02 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/23 23:24:11 by danperez         ###   ########.fr       */
+/*   Created: 2024/10/24 22:29:15 by danperez          #+#    #+#             */
+/*   Updated: 2024/10/24 22:42:00 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	c;
-
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		return;
-	}
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n = -n;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	ft_putchar_fd(c, fd);
+	new -> next = *lst;
+	*lst = new;
 }
 /*
 int	main(void)
 {
-	ft_putnbr_fd(12345, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-9876, 1);
-	ft_putchar_fd('\n', 1);
+	t_list	*head;
+	t_list	*new_node;
+
+	head = ft_lstnew("Second node");
+	printf("Before adding new node: %s\n", (char *)head->content);
+	new_node = ft_lstnew("First node");
+	ft_lstadd_front(&head, new_node);
+	printf("After adding new node: %s\n", (char *)head->content);
+	printf("Next node content: %s\n", (char *)head->next->content);
 	return (0);
 }
-*/
+ */

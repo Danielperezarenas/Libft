@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 11:24:02 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/23 23:24:11 by danperez         ###   ########.fr       */
+/*   Created: 2024/10/24 21:58:21 by danperez          #+#    #+#             */
+/*   Updated: 2024/10/24 22:30:45 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	char	c;
+	t_list	*list;
 
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		return;
-	}
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n = -n;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	ft_putchar_fd(c, fd);
+	list = malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list -> content = content;
+	list -> next = NULL;
+	return (list);
 }
 /*
 int	main(void)
 {
-	ft_putnbr_fd(12345, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-9876, 1);
-	ft_putchar_fd('\n', 1);
+	t_list	*new_node;
+	char	*content = "Hello, World!";
+
+	new_node = ft_lstnew(content);
+	if (new_node)
+	{
+		printf("Node content: %s\n", (char *)new_node->content);
+		printf("Next node: %p\n", (void *)new_node->next);
+	}
+	else
+		printf("Failed to create a new node.\n");
+	free(new_node);
 	return (0);
 }
 */
