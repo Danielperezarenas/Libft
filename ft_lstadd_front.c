@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 22:29:15 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/24 22:42:00 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/25 16:46:07 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ int	main(void)
 	printf("Next node content: %s\n", (char *)head->next->content);
 	return (0);
 }
- */
+*/

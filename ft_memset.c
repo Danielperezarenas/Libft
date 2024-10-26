@@ -46,4 +46,4 @@ void	*ft_memset(void *s, int c, size_t len)
 	printf("%s\n", buffer);
 	return (0);
 }
-  */
+*/

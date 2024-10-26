@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:51:22 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/15 14:46:03 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:41:46 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = ft_strlen(s);
 	if ((char)c == '\0')
-		return (NULL);
-	while (i)
+		return ((char *)&s[i]);
+	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return ((char *)s + i);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (NULL);
 }
-/* 
+/*
 int	main(void)
 {
 	char str[] = "Hello World!";

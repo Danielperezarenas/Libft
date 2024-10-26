@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 04:19:51 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/27 00:50:19 by danperez         ###   ########.fr       */
+/*   Created: 2024/10/25 18:18:45 by danperez          #+#    #+#             */
+/*   Updated: 2024/10/25 19:22:41 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list *ft_lstlast(t_list *lst)
 {
-	char	*subs;
-	size_t	i;
-	size_t	j;
-
-	i = start;
-	j = 0;
-	subs = malloc(len + 1);
-	if (!subs)
+	if (!lst)
 		return (NULL);
-	while (j < len && s[i])
-		{
-			subs[j] = s[i];
-			j++;
-			i++;
-		}
-	subs[j] = '\0';
-	return (subs);
+	while (lst -> next)
+		lst = lst -> next;
+	return (lst);
 }
 /*
 int	main(void)
 {
-	const char	s[15] = "Hola Campus!";
-	char	*substr;
+	t_list	*head = ft_lstnew("Node 1");
+	ft_lstadd_front(&head, ft_lstnew("Node 2"));
+	ft_lstadd_front(&head, ft_lstnew("Node 3"));
 
-	substr = ft_substr(s, 5, 13);
-	printf("String: %s\nSubstring: %s\n", s, substr);
-	free(substr);
+	t_list	*last = ft_lstlast(head);
+	if (last)
+		printf("Last node: %s\n", (char *)last -> content);
+	while (head)
+	{
+		t_list *tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: danperez <danperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 16:21:28 by danperez          #+#    #+#             */
-/*   Updated: 2024/10/06 17:53:36 by danperez         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:47:11 by danperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	while (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			sign = sign * -1;
@@ -36,7 +36,7 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-/* 
+/*
 int	main(void)
 {
 	char	str[] = " ---+--+1234ab567";
