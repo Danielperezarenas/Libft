@@ -34,7 +34,7 @@ DARK_YELLOW =	\033[38;5;143m
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-AR = ar rcs
+AR = ar -rcs
 RM = rm -f
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
